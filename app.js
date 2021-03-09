@@ -36,10 +36,10 @@ const quizData = [
 const quiz = document.getElementById('quiz');
 const answerEl = document.querySelectorAll('.answer');
 const questionEl = document.getElementById('question');
-const a_text = document.getElementById('a_text');
-const b_text = document.getElementById('b_text');
-const c_text = document.getElementById('c_text');
-const d_text = document.getElementById('d_text');
+const a_text = document.getElementById('a-text');
+const b_text = document.getElementById('b-text');
+const c_text = document.getElementById('c-text');
+const d_text = document.getElementById('d-text');
 const submitBtn = document.getElementById('submit');
 
 let currentQuiz = 0;
