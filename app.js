@@ -56,7 +56,7 @@ function loadQuiz() {
     b_text.innerText = currentQuizData.b;
     c_text.innerText = currentQuizData.c;
     d_text.innerText = currentQuizData.d;
-}
+};
 
 function deselectAnswers() {
     answerEls.forEach(answerEl => answerEl.checked = false);
@@ -77,4 +77,20 @@ function getSelected () {
 submitBtn.addEventListener('click', () => {
     const answer = getSelected();
 
+    if (answer) {
+        if (answer === quizData[currentQuiz].correct) {
+            score++;
+        };
+        currentQuiz++;
+
+        if (currentQuiz < quizData.length) {
+            loadQuiz();
+        } else {
+            quiz.innerHTML = ` 
+            <h2>You answerd ${score}/${quizData.length} questions correctly</h2>
+
+            <button onclick="location.reload()">Reload</button>
+            `
+        };
+    };
 });
